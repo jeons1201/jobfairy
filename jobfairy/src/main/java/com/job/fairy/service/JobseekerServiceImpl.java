@@ -3,10 +3,13 @@ package com.job.fairy.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.job.fairy.dao.JobseekerDAO;
 import com.job.fairy.vo.JobseekerVO;
 
+@Service
 public class JobseekerServiceImpl implements JobseekerService {
 
 	
