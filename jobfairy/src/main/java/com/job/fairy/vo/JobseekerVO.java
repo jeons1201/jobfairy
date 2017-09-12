@@ -2,8 +2,10 @@ package com.job.fairy.vo;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+@Component
 public class JobseekerVO {
 
 	
