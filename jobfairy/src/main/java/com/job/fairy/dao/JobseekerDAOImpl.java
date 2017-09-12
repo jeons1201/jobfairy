@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.job.fairy.vo.JobseekerVO;
 
-@Repository("jdao")
+@Repository("jobseekerDAO")
 public class JobseekerDAOImpl implements JobseekerDAO {
 
 	@Autowired
