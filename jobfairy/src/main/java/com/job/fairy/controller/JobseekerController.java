@@ -51,9 +51,7 @@ public class JobseekerController {
 				context.getRealPath(context.getInitParameter("uploadPath"));
 		
 		File file = new File (uploadPath+jobseekerVO.getPhotoFile().getOriginalFilename());
-		
 		if(file.exists()) file.delete();
-
 		FileUtils.writeByteArrayToFile(file, jobseekerVO.getPhotoFile().getBytes());
 	
 		} catch (IOException e) {
@@ -62,11 +60,10 @@ public class JobseekerController {
 		}
 		
 		jobseekerService.joinJsk(jobseekerVO);
-		
 		if(jobseekerService.joinJsk(jobseekerVO)) {
-			
 			System.out.println("회원추가성공");
 		}
+		
 		return "로그인화면으로..?";
 	}// end of joinJsk()
 	

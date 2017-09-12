@@ -18,7 +18,7 @@ public class JobseekerDAOImpl implements JobseekerDAO {
 	@Override
 	public boolean joinJsk(JobseekerVO jvo) {
 		
-		return false;
+		return sqlSession.insert("insertJsk", jvo)==1;
 	}
 
 	@Override
