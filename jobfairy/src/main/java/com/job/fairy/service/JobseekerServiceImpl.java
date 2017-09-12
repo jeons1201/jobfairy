@@ -18,8 +18,8 @@ public class JobseekerServiceImpl implements JobseekerService {
 	
 	@Override
 	public boolean joinJsk(JobseekerVO jvo) {
-		jobseekerDAO.joinJsk(jvo);
-		return false;
+
+		return 	jobseekerDAO.joinJsk(jvo);
 	}
 
 	@Override

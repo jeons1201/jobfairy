@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.job.fairy.service.JobseekerService;
 import com.job.fairy.vo.JobseekerVO;
 
 @Controller
@@ -22,6 +23,8 @@ public class JobseekerController {
 
 	@Autowired
 	private ServletContext context;
+	@Autowired 
+	private JobseekerService jobseekerService;
 	
 	//1 가입창으로 이동 
 	@RequestMapping(value="/jobseeker/joinJsk.do", 
@@ -42,6 +45,7 @@ public class JobseekerController {
 		  return "jobseeker/joinJsk";	
 		}
 		
+		//1 사진 업로드 처리 
 		try {
 		String uploadPath = 
 				context.getRealPath(context.getInitParameter("uploadPath"));
@@ -50,20 +54,19 @@ public class JobseekerController {
 		
 		if(file.exists()) file.delete();
 
-			FileUtils.writeByteArrayToFile(file, jobseekerVO.getPhotoFile().getBytes());
+		FileUtils.writeByteArrayToFile(file, jobseekerVO.getPhotoFile().getBytes());
+	
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		jobseekerService.joinJsk(jobseekerVO);
 		
-	
-		
-		
-		
-		
-		
-		
+		if(jobseekerService.joinJsk(jobseekerVO)) {
+			
+			System.out.println("회원추가성공");
+		}
 		return "로그인화면으로..?";
 	}// end of joinJsk()
 	
