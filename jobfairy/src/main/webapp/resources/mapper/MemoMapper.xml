@@ -4,7 +4,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.job.fairy.resourse.mapper.MemoMapper.xml">
 
-
 	<insert id="insertMember" parameterType="com.job.fairy.vo.MemoVO">
 		INSERT INTO T_MEMBER(USER_ID, USER_PW, USER_NM, EMAIL, REG_DATE)
 		VALUES(#{userId}, #{userPw}, #{userNm}, #{email}, SYSDATE)
