@@ -18,6 +18,7 @@ public class JobseekerValidator implements Validator {
 	 
 		JobseekerVO jvo = (JobseekerVO) target;
 		
+	
 		// 가입시 필수항목 공백검사 
 		
 		

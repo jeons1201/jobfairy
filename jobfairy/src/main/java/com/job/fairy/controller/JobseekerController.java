@@ -27,24 +27,24 @@ public class JobseekerController {
 	private JobseekerService jobseekerService;
 	
 	//1 가입창으로 이동 
-	@RequestMapping(value="/jobseeker/joinJsk.do", 
-			method=RequestMethod.POST) 
-	public String joinForm(@ModelAttribute JobseekerVO jobseekerVO) {
+	@RequestMapping("/jobseeker/joinJsk.do") 
+	public String joinForm(@ModelAttribute("jobseekerVO") JobseekerVO jobseekerVO) {
 	
+		
 		return "/jobseeker/joinJsk";
-	};
+	}
 	
 	// 2 가입양식 제출 
 	@RequestMapping(value="/jobseeker/aplJoin.do", 
-			method=RequestMethod.POST) 
-	public String joinJsk(@Valid JobseekerVO jobseekerVO, 
+			method= {RequestMethod.POST, RequestMethod.GET}) 
+	public String joinJsk(@ModelAttribute @Valid JobseekerVO jobseekerVO, 
 							BindingResult bindingResult,
 							Model model) {
 		
-		if(bindingResult.hasErrors()) {
+		/*if(bindingResult.hasErrors()) {
 		  return "jobseeker/joinJsk";	
 		}
-		
+		*/
 		//1 사진 업로드 처리 
 		try {
 		String uploadPath = 

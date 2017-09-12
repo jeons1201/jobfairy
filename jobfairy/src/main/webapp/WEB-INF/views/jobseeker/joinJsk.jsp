@@ -11,6 +11,7 @@
 <body>
 <h2>회원이 되세요 </h2>
 <form:form method="post" commandName="jobseekerVO"
+	modelAttribute="jobseekerVO"
 	       action="/jobseeker/aplJoin.do">
 	<form:label path="userId">아 이 디 : </form:label>
 	<form:input path="userId"/><br>
