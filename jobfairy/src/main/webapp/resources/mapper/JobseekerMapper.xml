@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.fairy.resources.mapper.JobseekerMapper">
+
+<insert id="insertJsk" parameterType="com.job.fairy.vo.JobseekerVO">
+   	INSERT INTO T_JOBSEEKER(APL_USER_ID, USER_PW, USER_NM, BIRTH, EMAIL,
+   							PHONE_NUM, TELEPHONE, RESIDENT, PHOTO, REG_DATE, STATUS)
+	VALUES(#{userId}, #{userPw}, #{userNm},#{birth}, #{email}, 
+			#{phoneNum}, #{telephone}, #{resident}, #{photo}, SYSDATE)
+</insert>
+
+
+</mapper>

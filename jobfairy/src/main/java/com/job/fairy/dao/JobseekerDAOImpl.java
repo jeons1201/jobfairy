@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.job.fairy.vo.JobseekerVO;
 
-@Repository("jdao")
+@Repository("jobseekerDAO")
 public class JobseekerDAOImpl implements JobseekerDAO {
 
 	@Autowired
@@ -18,7 +18,7 @@ public class JobseekerDAOImpl implements JobseekerDAO {
 	@Override
 	public boolean joinJsk(JobseekerVO jvo) {
 		
-		return false;
+		return sqlSession.insert("insertJsk", jvo)==1;
 	}
 
 	@Override

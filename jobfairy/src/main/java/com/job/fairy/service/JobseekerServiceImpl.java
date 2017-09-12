@@ -14,35 +14,35 @@ public class JobseekerServiceImpl implements JobseekerService {
 
 	
 	@Autowired
-	private JobseekerDAO jdao;
+	private JobseekerDAO jobseekerDAO;
 	
 	@Override
 	public boolean joinJsk(JobseekerVO jvo) {
-		jdao.joinJsk(jvo);
-		return false;
+
+		return 	jobseekerDAO.joinJsk(jvo);
 	}
 
 	@Override
 	public boolean updateJsk(JobseekerVO jvo) {
-		jdao.updateJsk(jvo);
+		jobseekerDAO.updateJsk(jvo);
 		return false;
 	}
 
 	@Override
 	public boolean withdrawJsk(JobseekerVO jvo) {
-		jdao.withdrawJsk(jvo);
+		jobseekerDAO.withdrawJsk(jvo);
 		return false;
 	}
 
 	@Override
 	public JobseekerVO selectOneJsk(JobseekerVO jvo) {
-		jdao.selectOneJsk(jvo);
+		jobseekerDAO.selectOneJsk(jvo);
 		return null;
 	}
 
 	@Override
 	public List<JobseekerVO> selectAllJsk(JobseekerVO jvo) {
-		jdao.selectAllJsk(jvo);
+		jobseekerDAO.selectAllJsk(jvo);
 		return null;
 	}
 

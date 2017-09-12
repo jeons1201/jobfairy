@@ -2,6 +2,8 @@ package com.job.fairy.vo;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class JobseekerVO {
 
 	
@@ -12,9 +14,9 @@ public class JobseekerVO {
 	private String phoneNum;
 	private String telephone;
 	private String regDate;
-	private int status; // 0: Å»ÅðÈ¸¿ø   1: °¡ÀÔ È¸¿ø 
-	private String birth; // ÀÏ´Ü.. stringÀ¸·Î ÇÏ°ÚÀ½ 
-	private String photo;
+	private int status; // 0: Å»ï¿½ï¿½È¸ï¿½ï¿½   1: ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ 
+	private String birth; // ï¿½Ï´ï¿½.. stringï¿½ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ï¿½ï¿½ 
+	private MultipartFile photoFile;
 	private String resident;
 	
 	
@@ -74,11 +76,12 @@ public class JobseekerVO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getPhoto() {
-		return photo;
+
+	public MultipartFile getPhotoFile() {
+		return photoFile;
 	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setPhotoFile(MultipartFile photoFile) {
+		this.photoFile = photoFile;
 	}
 	public String getResident() {
 		return resident;
